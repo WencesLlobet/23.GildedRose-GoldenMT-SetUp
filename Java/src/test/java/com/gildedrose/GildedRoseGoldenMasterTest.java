@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class GildedRoseGoldenMasterTest {
     private static final int MINIMUM = -10;
-    private static final int MAXIMUM = 50;
+    private static final int MAXIMUM = 80;
     private int SEED = 100;
     private int NUM_OF_TESTS = 4000;
     private Random random = new Random(SEED);
@@ -41,7 +41,7 @@ public class GildedRoseGoldenMasterTest {
     }
 
     private Item nexRandomItem() {
-        return new Item(nextRandomName(),2,nextRandomInt(MINIMUM,MAXIMUM));
+        return new Item(nextRandomName(),nextRandomInt(MINIMUM,MAXIMUM),nextRandomInt(MINIMUM,MAXIMUM));
     }
 
     private String nextRandomName() {
