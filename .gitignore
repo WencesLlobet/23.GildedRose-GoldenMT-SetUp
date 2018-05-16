@@ -1,4 +1,4 @@
-.idea/workspace.xml
+.idea
 *.pyc
 /perl6/lib/.precomp
 /elixir/_build/
