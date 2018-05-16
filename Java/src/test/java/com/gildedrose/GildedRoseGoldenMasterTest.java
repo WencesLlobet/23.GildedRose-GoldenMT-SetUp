@@ -41,8 +41,7 @@ public class GildedRoseGoldenMasterTest {
     }
 
     private Item nexRandomItem() {
-        Item item = new Item(nextRandomName(),2,nextRandomInt(MINIMUM,MAXIMUM));
-        return item;
+        return new Item(nextRandomName(),2,nextRandomInt(MINIMUM,MAXIMUM));
     }
 
     private String nextRandomName() {
