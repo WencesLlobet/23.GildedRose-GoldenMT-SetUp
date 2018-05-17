@@ -2,32 +2,32 @@ package com.gildedrose;
 
 public class TicketsItem extends Item {
 
-    public static final int MAXIMUM_FOR_MODERATE_SELLIN = 11;
     public static final int OUTSTANDING_QUALITY = 50;
-    public static final int MINIMUM_FOR_MODERATE_SELLING = 6;
+    private final Sellin sellInObj;
 
     public TicketsItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
+        this.sellInObj = new Sellin(sellIn);
     }
 
     @Override
     public void updateQuality() {
-        if (hasModerateSellin() && hasNotOutstandingQuality()) {
+        if(hasOutstandingQuality()){
+            return;
+        }
+        if (sellInObj.hasModerateSellin() ){
             quality = quality + 1;
             return;
         }
-        if (hasLowSellin() && hasNotOutstandingQuality()) {
+        if (sellInObj.hasLowSellin() ){
             quality = quality + 2;
         }
     }
 
-    private boolean hasLowSellin() {
-        return sellIn < MINIMUM_FOR_MODERATE_SELLING;
+    private boolean hasOutstandingQuality() {
+        return !hasNotOutstandingQuality();
     }
 
-    private boolean hasModerateSellin() {
-        return sellIn < MAXIMUM_FOR_MODERATE_SELLIN && sellIn >= 6;
-    }
 
     private boolean hasNotOutstandingQuality() {
         return quality < OUTSTANDING_QUALITY;
