@@ -20,16 +20,9 @@ class GildedRose {
 
     private void update(Item currentItem) {
 
-        currentItem.updateQuality();
         currentItem.updateSellin();
-
-
-            if (currentItem instanceof OtherItem) {
-
-                if (currentItem.sellIn < 0) {
-                    currentItem.decreaseQualityByOneWithFloor();
-                }
-            }
+        currentItem.updateQuality();
+        
             if(currentItem instanceof TicketsItem){
                 if (currentItem.sellIn < 0) {
                     currentItem.quality = 0;

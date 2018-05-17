@@ -13,6 +13,9 @@ public class OtherItem extends Item{
         /*if(sellInUderZero()){
             decreaseQualityByOne();
         }*/
+        if (sellIn < 0) {
+            decreaseQualityByOneWithFloor();
+        }
     }
 
     private boolean sellInUderZero() {
