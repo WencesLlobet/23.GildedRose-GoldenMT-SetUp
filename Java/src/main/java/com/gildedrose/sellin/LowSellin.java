@@ -1,4 +1,6 @@
-package com.gildedrose;
+package com.gildedrose.sellin;
+
+import com.gildedrose.Sellin;
 
 public class LowSellin extends Sellin {
     public LowSellin(int sellin) {
@@ -7,7 +9,7 @@ public class LowSellin extends Sellin {
 
     @Override
     protected String getType() {
-        return "LOW";
+        return LOW;
     }
 
 

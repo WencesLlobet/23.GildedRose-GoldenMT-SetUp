@@ -15,11 +15,11 @@ public class TicketsItem extends Item {
         if(hasOutstandingQuality()){
             return;
         }
-        if (sellInObj.hasModerateSellin() ){
+        if (sellInObj.getType().equals(Sellin.MODERATE) ){
             quality = quality + 1;
             return;
         }
-        if (sellInObj.hasLowSellin() ){
+        if (sellInObj.getType().equals(Sellin.LOW) ){
             quality = quality + 2;
         }
     }
