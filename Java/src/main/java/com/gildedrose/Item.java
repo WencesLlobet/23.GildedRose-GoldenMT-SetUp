@@ -30,10 +30,14 @@ public abstract class Item {
         return quality < OUTSTANDING_QUALITY;
     }
 
-    void decreaseQualityByOne(){
+    protected void decreaseQualityByOneWithFloor(){
         if(quality > 0){
-            quality--;
+            decreaseQualityByOne();
         }
+    }
+
+    protected void decreaseQualityByOne() {
+        quality--;
     }
 
     public abstract void updateSellin();

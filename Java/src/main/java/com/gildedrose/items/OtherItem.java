@@ -9,7 +9,14 @@ public class OtherItem extends Item{
 
     @Override
     public void updateQuality() {
+        decreaseQualityByOneWithFloor();
+        /*if(sellInUderZero()){
+            decreaseQualityByOne();
+        }*/
+    }
 
+    private boolean sellInUderZero() {
+        return sellIn < 0;
     }
 
     @Override
