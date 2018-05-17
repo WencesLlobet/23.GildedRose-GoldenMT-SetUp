@@ -9,7 +9,7 @@ public class HighSellin extends Sellin {
     }
 
     @Override
-    protected String getType() {
+    public String getType() {
         return HIGH;
     }
 }

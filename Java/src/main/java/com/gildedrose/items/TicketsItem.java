@@ -1,4 +1,7 @@
-package com.gildedrose;
+package com.gildedrose.items;
+
+import com.gildedrose.Item;
+import com.gildedrose.Sellin;
 
 import java.util.Hashtable;
 

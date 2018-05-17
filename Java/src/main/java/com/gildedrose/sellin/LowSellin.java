@@ -8,7 +8,7 @@ public class LowSellin extends Sellin {
     }
 
     @Override
-    protected String getType() {
+    public String getType() {
         return LOW;
     }
 

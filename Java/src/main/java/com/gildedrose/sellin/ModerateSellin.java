@@ -9,7 +9,7 @@ public class ModerateSellin extends Sellin {
     }
 
     @Override
-    protected String getType() {
+    public String getType() {
         return MODERATE;
     }
 }

@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+import com.gildedrose.items.OtherItem;
+import com.gildedrose.items.TicketsItem;
+
 public class ItemBuilder {
     private String name;
     private int sellIn;
@@ -24,6 +27,9 @@ public class ItemBuilder {
         if(name.equals("Backstage passes to a TAFKAL80ETC concert")){
             return new TicketsItem(name, sellIn, quality);
         }
-        return new Item(name, sellIn, quality);
+        if(name.equals("Aged Brie") || name.equals("Sulfuras, Hand of Ragnaros")) {
+            return new Item(name, sellIn, quality);
+        }
+        return new OtherItem(name, sellIn, quality);
     }
 }

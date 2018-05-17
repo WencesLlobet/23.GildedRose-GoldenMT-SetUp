@@ -36,5 +36,5 @@ public abstract class Sellin {
         return sellIn < MAXIMUM_FOR_MODERATE_SELLIN && sellIn >= MINIMUM_FOR_MODERATE_SELLING;
     }
 
-    protected abstract String getType();
+    public abstract String getType();
 }

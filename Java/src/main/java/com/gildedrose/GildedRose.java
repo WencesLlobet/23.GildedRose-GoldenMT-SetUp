@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.items.OtherItem;
+
 class GildedRose {
     Item[] items;
 
@@ -15,7 +17,7 @@ class GildedRose {
     }
 
     private void update(Item currentItem) {
-        if (!currentItem.name.equals("Aged Brie") && !currentItem.name.equals("Backstage passes to a TAFKAL80ETC concert") && !currentItem.name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (currentItem instanceof OtherItem) {
             currentItem.decreaseQualityByOne();
         }
 
@@ -37,7 +39,7 @@ class GildedRose {
                         currentItem.decreaseQualityByOne();
                     }
                 } else {
-                    currentItem.quality = currentItem.quality - currentItem.quality;
+                    currentItem.quality = 0;
                 }
             } else {
                 if (currentItem.quality < 50) {
