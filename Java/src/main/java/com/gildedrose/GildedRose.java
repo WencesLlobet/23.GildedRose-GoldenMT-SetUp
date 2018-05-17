@@ -15,24 +15,19 @@ class GildedRose {
     }
 
     private void update(Item currentItem) {
-        if (!currentItem.name.equals("Aged Brie") && !currentItem.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (currentItem.quality > 0) {
-                if (!currentItem.name.equals("Sulfuras, Hand of Ragnaros")) {
-                    currentItem.quality = currentItem.quality - 1;
-                }
-            }
-        } else {
+        if (!currentItem.name.equals("Aged Brie") && !currentItem.name.equals("Backstage passes to a TAFKAL80ETC concert") && !currentItem.name.equals("Sulfuras, Hand of Ragnaros")) {
+            currentItem.decreaseQualityByOne();
+        }
+
+        if(currentItem.name.equals("Aged Brie") || currentItem.name.equals("Backstage passes to a TAFKAL80ETC concert")){
             if (currentItem.quality < 50) {
                 currentItem.quality = currentItem.quality + 1;
-
-                if (currentItem.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                   currentItem.updateQuality();
-                }
             }
         }
 
         if (!currentItem.name.equals("Sulfuras, Hand of Ragnaros")) {
-            currentItem.sellIn = currentItem.sellIn - 1;
+             currentItem.sellIn = currentItem.sellIn - 1;
         }
 
         if (currentItem.sellIn < 0) {

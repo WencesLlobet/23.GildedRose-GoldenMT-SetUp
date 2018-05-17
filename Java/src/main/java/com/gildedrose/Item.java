@@ -2,6 +2,7 @@ package com.gildedrose;
 
 public class Item {
 
+    public static final int OUTSTANDING_QUALITY = 50;
     public String name;
 
     public int sellIn;
@@ -20,6 +21,19 @@ public class Item {
     }
 
     public void updateQuality() {
-        throw new UnsupportedOperationException();
+    }
+
+    protected boolean hasOutstandingQuality() {
+        return !hasNotOutstandingQuality();
+    }
+
+    protected boolean hasNotOutstandingQuality() {
+        return quality < OUTSTANDING_QUALITY;
+    }
+
+    void decreaseQualityByOne(){
+        if(quality > 0){
+            quality--;
+        }
     }
 }

@@ -4,7 +4,6 @@ import java.util.Hashtable;
 
 public class TicketsItem extends Item {
 
-    public static final int OUTSTANDING_QUALITY = 50;
     private final Sellin sellInObj;
     private final Hashtable<String,Integer> incrementForGiven = new Hashtable<String,Integer>(){{
         put(Sellin.LOW,2);
@@ -25,12 +24,4 @@ public class TicketsItem extends Item {
         quality = quality +  incrementForGiven.get(sellInObj.getType());
     }
 
-    private boolean hasOutstandingQuality() {
-        return !hasNotOutstandingQuality();
-    }
-
-
-    private boolean hasNotOutstandingQuality() {
-        return quality < OUTSTANDING_QUALITY;
-    }
 }
