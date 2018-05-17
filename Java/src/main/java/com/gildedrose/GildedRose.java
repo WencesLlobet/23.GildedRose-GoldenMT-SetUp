@@ -22,12 +22,7 @@ class GildedRose {
 
         currentItem.updateSellin();
         currentItem.updateQuality();
-        
-            if(currentItem instanceof TicketsItem){
-                if (currentItem.sellIn < 0) {
-                    currentItem.quality = 0;
-                }
-            }
+
             if(currentItem instanceof  AgedBrieItem) {
                 if (currentItem.sellIn < 0) {
                     if (currentItem.quality < 50) {

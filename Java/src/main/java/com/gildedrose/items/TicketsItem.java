@@ -24,6 +24,8 @@ public class TicketsItem extends Item {
         if(hasOutstandingQuality()){
             return;
         }
+        incrementForGiven.put(Sellin.UNDER_ZERO,-quality);
+
         quality = quality +  incrementForGiven.get(sellInObj.getType());
     }
 

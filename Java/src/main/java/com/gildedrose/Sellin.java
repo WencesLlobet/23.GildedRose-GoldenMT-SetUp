@@ -10,6 +10,7 @@ public abstract class Sellin {
 
     public static final int MAXIMUM_FOR_MODERATE_SELLIN = 11;
     public static final int MINIMUM_FOR_MODERATE_SELLING = 6;
+    public static final String UNDER_ZERO = "UNDER_ZERO";
     public static final String MODERATE = "MODERATE";
     public static final String LOW = "LOW";
     public static final String HIGH = "HIGH";
@@ -19,6 +20,9 @@ public abstract class Sellin {
     }
 
     public static Sellin createSellin(int sellin) {
+        if(hasUnderZeroSellin(sellin)){
+            return new UnderZeroSellin(sellin);
+        }
         if(hasLowSellin(sellin)) {
             return new LowSellin(sellin);
         }
@@ -26,6 +30,10 @@ public abstract class Sellin {
             return new ModerateSellin(sellin);
         }
         return new HighSellin(sellin);
+    }
+
+    private static boolean hasUnderZeroSellin(int sellin) {
+        return sellin < 0;
     }
 
     protected static boolean hasLowSellin(int sellIn) {
