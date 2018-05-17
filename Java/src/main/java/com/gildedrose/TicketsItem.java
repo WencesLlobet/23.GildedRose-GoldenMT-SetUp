@@ -7,7 +7,7 @@ public class TicketsItem extends Item {
 
     public TicketsItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
-        this.sellInObj = new Sellin(sellIn);
+        this.sellInObj = Sellin.createSellin(sellIn);
     }
 
     @Override
