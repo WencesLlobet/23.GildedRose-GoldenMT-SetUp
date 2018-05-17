@@ -22,7 +22,7 @@ public class ItemBuilder {
 
     public Item createItem() {
         if(name.equals("Backstage passes to a TAFKAL80ETC concert")){
-            return new TicketsItem(name, sellIn, quality);
+            return new TicketsItem(name, Sellin.createSellin(sellIn), quality);
         }
         return new Item(name, sellIn, quality);
     }

@@ -1,33 +1,42 @@
 package com.gildedrose;
 
+import java.util.Hashtable;
+
 public class TicketsItem extends Item {
 
-    public static final int MAXIMUM_FOR_MODERATE_SELLIN = 11;
     public static final int OUTSTANDING_QUALITY = 50;
-    public static final int MINIMUM_FOR_MODERATE_SELLING = 6;
+    private final Sellin sellInObj;
+    private Hashtable<SellinType, Integer> incrementDerived = new Hashtable<SellinType, Integer>(){{
+        put(SellinType.LOW, 2);
+        put(SellinType.MODERATE, 1);
+        put(SellinType.HI,1);
+    }};
 
     public TicketsItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+        super(name,sellIn,quality);
+        throw new UnsupportedOperationException();
     }
+
+    public TicketsItem(String name, Sellin sellin, int quality){
+        super(name,sellin.getQuantity(),quality);
+        this.sellInObj = sellin;
+    }
+
 
     @Override
     public void updateQuality() {
-        if (hasModerateSellin() && hasNotOutstandingQuality()) {
-            quality = quality + 1;
+        if(hasOutstandingQuality()){
             return;
         }
-        if (hasLowSellin() && hasNotOutstandingQuality()) {
-            quality = quality + 2;
-        }
+        int increment = incrementDerived.get(sellInObj.getType());
+        quality += increment;
     }
 
-    private boolean hasLowSellin() {
-        return sellIn < MINIMUM_FOR_MODERATE_SELLING;
+    private boolean hasOutstandingQuality() {
+        return !hasNotOutstandingQuality();
     }
 
-    private boolean hasModerateSellin() {
-        return sellIn < MAXIMUM_FOR_MODERATE_SELLIN && sellIn >= 6;
-    }
+
 
     private boolean hasNotOutstandingQuality() {
         return quality < OUTSTANDING_QUALITY;
