@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 import com.gildedrose.items.OtherItem;
+import com.gildedrose.items.TicketsItem;
 
 class GildedRose {
     Item[] items;
@@ -21,10 +22,10 @@ class GildedRose {
             currentItem.decreaseQualityByOne();
         }
 
-        if(currentItem.name.equals("Aged Brie") || currentItem.name.equals("Backstage passes to a TAFKAL80ETC concert")){
+        if(currentItem instanceof AgedBrieItem || currentItem instanceof TicketsItem){
             if (currentItem.quality < 50) {
                 currentItem.quality = currentItem.quality + 1;
-                  currentItem.updateQuality();
+                currentItem.updateQuality();
             }
         }
 
