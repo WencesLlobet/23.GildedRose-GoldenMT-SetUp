@@ -5,16 +5,16 @@ public class TexttestFixture {
         System.out.println("OMGHAI!");
 
         Item[] items = new Item[] {
-                new Item("+5 Dexterity Vest", 10, 20), //
-                new Item("Aged Brie", 2, 0), //
-                new Item("Elixir of the Mongoose", 5, 7), //
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                new ItemBuilder().setName("+5 Dexterity Vest").setSellIn(10).setQuality(20).createItem(), //
+                new ItemBuilder().setName("Aged Brie").setSellIn(2).setQuality(0).createItem(), //
+                new ItemBuilder().setName("Elixir of the Mongoose").setSellIn(5).setQuality(7).createItem(), //
+                new ItemBuilder().setName("Sulfuras, Hand of Ragnaros").setSellIn(0).setQuality(80).createItem(), //
+                new ItemBuilder().setName("Sulfuras, Hand of Ragnaros").setSellIn(-1).setQuality(80).createItem(),
+                new ItemBuilder().setName("Backstage passes to a TAFKAL80ETC concert").setSellIn(15).setQuality(20).createItem(),
+                new ItemBuilder().setName("Backstage passes to a TAFKAL80ETC concert").setSellIn(10).setQuality(49).createItem(),
+                new ItemBuilder().setName("Backstage passes to a TAFKAL80ETC concert").setSellIn(5).setQuality(49).createItem(),
                 // this conjured item does not work properly yet
-                new Item("Conjured Mana Cake", 3, 6) };
+                new ItemBuilder().setName("Conjured Mana Cake").setSellIn(3).setQuality(6).createItem()};
 
         GildedRose app = new GildedRose(items);
 

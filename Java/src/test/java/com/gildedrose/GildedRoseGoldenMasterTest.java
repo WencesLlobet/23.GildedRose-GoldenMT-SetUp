@@ -3,7 +3,6 @@ package com.gildedrose;
 import org.approvaltests.Approvals;
 import org.junit.Test;
 
-import javax.naming.NamingException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -41,7 +40,7 @@ public class GildedRoseGoldenMasterTest {
     }
 
     private Item nexRandomItem() {
-        return new Item(nextRandomName(),nextRandomInt(MINIMUM,MAXIMUM),nextRandomInt(MINIMUM,MAXIMUM));
+        return new ItemBuilder().setName(nextRandomName()).setSellIn(nextRandomInt(MINIMUM, MAXIMUM)).setQuality(nextRandomInt(MINIMUM, MAXIMUM)).createItem();
     }
 
     private String nextRandomName() {
