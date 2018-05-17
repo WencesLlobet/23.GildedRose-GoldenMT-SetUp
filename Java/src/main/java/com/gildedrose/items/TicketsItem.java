@@ -9,9 +9,9 @@ public class TicketsItem extends Item {
 
     private final Sellin sellInObj;
     private final Hashtable<String,Integer> incrementForGiven = new Hashtable<String,Integer>(){{
-        put(Sellin.LOW,2);
-        put(Sellin.MODERATE,1);
-        put(Sellin.HIGH,0);
+        put(Sellin.LOW,3);
+        put(Sellin.MODERATE,2);
+        put(Sellin.HIGH,1);
     }};
 
     public TicketsItem(String name, int sellIn, int quality) {
@@ -25,6 +25,11 @@ public class TicketsItem extends Item {
             return;
         }
         quality = quality +  incrementForGiven.get(sellInObj.getType());
+    }
+
+    @Override
+    public void updateSellin() {
+        sellIn = sellIn - 1;
     }
 
 }

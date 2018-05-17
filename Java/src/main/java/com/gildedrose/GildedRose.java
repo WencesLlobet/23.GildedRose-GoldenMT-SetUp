@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import com.gildedrose.items.AgedBrieItem;
 import com.gildedrose.items.OtherItem;
 import com.gildedrose.items.TicketsItem;
 
@@ -23,15 +24,11 @@ class GildedRose {
         }
 
         if(currentItem instanceof AgedBrieItem || currentItem instanceof TicketsItem){
-            if (currentItem.quality < 50) {
-                currentItem.quality = currentItem.quality + 1;
-                currentItem.updateQuality();
-            }
+            currentItem.updateQuality();
         }
 
-        if (!currentItem.name.equals("Sulfuras, Hand of Ragnaros")) {
-             currentItem.sellIn = currentItem.sellIn - 1;
-        }
+        currentItem.updateSellin();
+
 
         if (currentItem.sellIn < 0) {
             if (!currentItem.name.equals("Aged Brie")) {

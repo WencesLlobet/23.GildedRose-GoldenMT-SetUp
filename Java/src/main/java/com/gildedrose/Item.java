@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class Item {
+public abstract class Item {
 
     public static final int OUTSTANDING_QUALITY = 50;
     public String name;
@@ -20,8 +20,7 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    public void updateQuality() {
-    }
+    public abstract void updateQuality();
 
     protected boolean hasOutstandingQuality() {
         return !hasNotOutstandingQuality();
@@ -36,4 +35,6 @@ public class Item {
             quality--;
         }
     }
+
+    public abstract void updateSellin();
 }

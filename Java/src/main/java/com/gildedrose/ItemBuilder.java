@@ -1,6 +1,8 @@
 package com.gildedrose;
 
+import com.gildedrose.items.AgedBrieItem;
 import com.gildedrose.items.OtherItem;
+import com.gildedrose.items.SulfurasItem;
 import com.gildedrose.items.TicketsItem;
 
 public class ItemBuilder {
@@ -31,7 +33,7 @@ public class ItemBuilder {
             return new AgedBrieItem(name,sellIn,quality);
 
         } if(name.equals("Sulfuras, Hand of Ragnaros")) {
-            return new Item(name, sellIn, quality);
+            return new SulfurasItem(name, sellIn, quality);
         }
         return new OtherItem(name, sellIn, quality);
     }
