@@ -31,7 +31,7 @@ public class GildedRoseCharachterisationTest {
             "48, 50",
             "49, 50",
             "50, 50"})
-    public void aged_brie_rises_quality_by_2_till_50(int intialQuality, int expectedQuality) {
+    public void aged_brie_rises_quality_till_reaching_an_outstanding_quality(int intialQuality, int expectedQuality) {
         Item[] items = new Item[] { new Item("Aged Brie", 0, intialQuality) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -61,7 +61,7 @@ public class GildedRoseCharachterisationTest {
 
             "50, 50, 50",
             "70, 70, 50"})
-    public void backstage_passes_increment_quality_if_they_are_not_selled_in_huge_amounts(int initialQuality, int expectedQuality, int sellin) {
+    public void backstage_passes_increment_quality_if_they_have_not_an_outstanding_quality(int initialQuality, int expectedQuality, int sellin) {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", sellin, initialQuality) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
