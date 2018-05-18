@@ -27,7 +27,7 @@ public class TicketsItem extends Item {
 
     @Override
     public void updateSellin() {
-        decreaseSellinByOne();
+        sellInReal.decreaseByOne();
     }
 
 }

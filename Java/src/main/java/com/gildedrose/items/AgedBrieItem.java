@@ -10,14 +10,14 @@ public class AgedBrieItem extends Item {
         if (qualityReal.isNotOustanding()) {
             qualityReal.incraseByOne();
         }
-        if (isSellinUnderZero() && qualityReal.isNotOustanding()) {
+        if (sellInReal.isSellInunderZero() && qualityReal.isNotOustanding()) {
             qualityReal.incraseByOne();
         }
     }
 
     @Override
     public void updateSellin() {
-        decreaseSellinByOne();
+        sellInReal.decreaseByOne();
     }
 
 }

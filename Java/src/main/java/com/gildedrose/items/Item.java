@@ -4,9 +4,9 @@ import com.gildedrose.items.sellin.Sellin;
 
 public abstract class Item {
 
-    protected String name;
-    protected Sellin sellInReal;
-    protected Quality qualityReal;
+    private String name;
+    Sellin sellInReal;
+    Quality qualityReal;
 
 
     public Item(String name, int sellIn, int quality) {
@@ -15,41 +15,26 @@ public abstract class Item {
         this.qualityReal = new Quality(quality);
     }
 
-   @Override
-   public String toString() {
+    public abstract void updateQuality();
+
+    public abstract void updateSellin();
+
+
+
+    @Override
+    public String toString() {
         return getName() + ", " + getSellIn() + ", " + getQuality();
     }
 
-    public abstract void updateQuality();
-
+    private String getName() {
+        return name;
+    }
 
     public int getQuality() {
         return qualityReal.getQuality();
     }
 
-
-
-
-
-
-
-
-
-    public abstract void updateSellin();
-
-    protected boolean isSellinUnderZero() {
-        return sellInReal.isSellInunderZero();
-    }
-
-    protected void decreaseSellinByOne() {
-        sellInReal.decreaseByOne();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getSellIn() {
+    private int getSellIn() {
         return sellInReal.getSellin();
     }
 }

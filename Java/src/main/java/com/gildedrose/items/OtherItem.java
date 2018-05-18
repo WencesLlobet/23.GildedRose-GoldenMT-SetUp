@@ -8,17 +8,13 @@ public class OtherItem extends Item{
     @Override
     public void updateQuality() {
         qualityReal.decreaseQualityByOneWithFloor();
-        if (isSellinUnderZero()) {
+        if (sellInReal.isSellInunderZero()) {
             qualityReal.decreaseQualityByOneWithFloor();
         }
     }
 
-    private boolean sellInUderZero() {
-        return isSellinUnderZero();
-    }
-
     @Override
     public void updateSellin() {
-        decreaseSellinByOne();
+        sellInReal.decreaseByOne();
     }
 }
