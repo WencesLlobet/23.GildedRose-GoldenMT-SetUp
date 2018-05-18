@@ -1,7 +1,5 @@
 package com.gildedrose.items;
 
-import com.gildedrose.Item;
-
 public class OtherItem extends Item{
     public OtherItem(String name, int sellIn, int quality) {
         super(name,sellIn,quality);
@@ -10,20 +8,17 @@ public class OtherItem extends Item{
     @Override
     public void updateQuality() {
         decreaseQualityByOneWithFloor();
-        /*if(sellInUderZero()){
-            decreaseQualityByOne();
-        }*/
-        if (sellIn < 0) {
+        if (isSellinUnderZero()) {
             decreaseQualityByOneWithFloor();
         }
     }
 
     private boolean sellInUderZero() {
-        return sellIn < 0;
+        return isSellinUnderZero();
     }
 
     @Override
     public void updateSellin() {
-        sellIn = sellIn - 1;
+        decreaseSellinByOne();
     }
 }

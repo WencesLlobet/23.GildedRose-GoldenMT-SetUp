@@ -1,7 +1,6 @@
 package com.gildedrose.items;
 
-import com.gildedrose.Item;
-import com.gildedrose.Sellin;
+import com.gildedrose.sellin.Sellin;
 
 import java.util.Hashtable;
 
@@ -29,7 +28,7 @@ public class TicketsItem extends Item {
 
     @Override
     public void updateSellin() {
-        sellIn = sellIn - 1;
+        decreaseSellinByOne();
     }
 
 }

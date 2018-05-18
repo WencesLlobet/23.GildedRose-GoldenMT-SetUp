@@ -1,9 +1,4 @@
-package com.gildedrose;
-
-import com.gildedrose.items.AgedBrieItem;
-import com.gildedrose.items.OtherItem;
-import com.gildedrose.items.SulfurasItem;
-import com.gildedrose.items.TicketsItem;
+package com.gildedrose.items;
 
 public class ItemBuilder {
     private String name;

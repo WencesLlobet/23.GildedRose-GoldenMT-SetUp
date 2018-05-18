@@ -1,9 +1,4 @@
-package com.gildedrose;
-
-import com.gildedrose.items.UnderZeroSellin;
-import com.gildedrose.sellin.HighSellin;
-import com.gildedrose.sellin.LowSellin;
-import com.gildedrose.sellin.ModerateSellin;
+package com.gildedrose.sellin;
 
 public abstract class Sellin {
     int sellIn;
@@ -21,7 +16,7 @@ public abstract class Sellin {
 
     public static Sellin createSellin(int sellin) {
         if(hasUnderZeroSellin(sellin)){
-            return new UnderZeroSellin(sellin);
+            return new HighSellin.UnderZeroSellin(sellin);
         }
         if(hasLowSellin(sellin)) {
             return new LowSellin(sellin);
@@ -45,4 +40,16 @@ public abstract class Sellin {
     }
 
     public abstract String getType();
+
+    public void decreaseByOne() {
+        sellIn--;
+    }
+
+    public boolean isSellInunderZero() {
+        return sellIn < 0;
+    }
+
+    public int getSellin() {
+        return sellIn;
+    }
 }

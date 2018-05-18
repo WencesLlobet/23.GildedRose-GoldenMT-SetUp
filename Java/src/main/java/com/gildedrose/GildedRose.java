@@ -1,8 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.items.AgedBrieItem;
-import com.gildedrose.items.OtherItem;
-import com.gildedrose.items.TicketsItem;
+import com.gildedrose.items.Item;
 
 class GildedRose {
     Item[] items;

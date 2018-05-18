@@ -1,8 +1,6 @@
 package com.gildedrose.sellin;
 
 
-import com.gildedrose.Sellin;
-
 public class HighSellin extends Sellin {
     public HighSellin(int sellin) {
         super(sellin);
@@ -11,5 +9,16 @@ public class HighSellin extends Sellin {
     @Override
     public String getType() {
         return HIGH;
+    }
+
+    public static class UnderZeroSellin extends Sellin {
+        public UnderZeroSellin(int sellin) {
+            super(sellin);
+        }
+
+        @Override
+        public String getType() {
+            return UNDER_ZERO;
+        }
     }
 }

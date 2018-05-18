@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.items.Item;
+import com.gildedrose.items.ItemBuilder;
 import org.approvaltests.Approvals;
 import org.junit.Test;
 

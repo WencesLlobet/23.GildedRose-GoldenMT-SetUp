@@ -1,6 +1,4 @@
-package com.gildedrose.items;
-
-import com.gildedrose.Sellin;
+package com.gildedrose.sellin;
 
 public class UnderZeroSellin extends Sellin {
     public UnderZeroSellin(int sellin) {

@@ -2,6 +2,8 @@ package com.gildedrose;
 
 import static org.junit.Assert.*;
 
+import com.gildedrose.items.Item;
+import com.gildedrose.items.ItemBuilder;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
@@ -21,7 +23,7 @@ public class GildedRoseCharachterisationTest {
         Item[] items = new Item[] {new ItemBuilder().setName("foo").setSellIn(0).setQuality(initialQuality).createItem()};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(expectedQuality, app.items[0].quality);
+        assertEquals(expectedQuality, app.items[0].getQuality());
     }
 
     @Test
@@ -35,7 +37,7 @@ public class GildedRoseCharachterisationTest {
         Item[] items = new Item[] {new ItemBuilder().setName("Aged Brie").setSellIn(0).setQuality(intialQuality).createItem()};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(expectedQuality, app.items[0].quality);
+        assertEquals(expectedQuality, app.items[0].getQuality());
     }
 
     @Test
@@ -49,7 +51,7 @@ public class GildedRoseCharachterisationTest {
         Item[] items = new Item[] {new ItemBuilder().setName("Sulfuras, Hand of Ragnaros").setSellIn(0).setQuality(initialQuality).createItem()};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(expectedQuality, app.items[0].quality);
+        assertEquals(expectedQuality, app.items[0].getQuality());
     }
 
     @Test
@@ -65,7 +67,7 @@ public class GildedRoseCharachterisationTest {
         Item[] items = new Item[] {new ItemBuilder().setName("Backstage passes to a TAFKAL80ETC concert").setSellIn(sellin).setQuality(initialQuality).createItem()};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(expectedQuality, app.items[0].quality);
+        assertEquals(expectedQuality, app.items[0].getQuality());
     }
 
     @Test
@@ -81,7 +83,7 @@ public class GildedRoseCharachterisationTest {
         Item[] items = new Item[] {new ItemBuilder().setName("Backstage passes to a TAFKAL80ETC concert").setSellIn(sellin).setQuality(initalQuality).createItem()};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(expectedQuality, app.items[0].quality);
+        assertEquals(expectedQuality, app.items[0].getQuality());
     }
 
 }

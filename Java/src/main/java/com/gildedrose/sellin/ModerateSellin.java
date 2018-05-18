@@ -1,7 +1,5 @@
 package com.gildedrose.sellin;
 
-import com.gildedrose.Sellin;
-
 public class ModerateSellin extends Sellin {
 
     public ModerateSellin(int sellin) {
