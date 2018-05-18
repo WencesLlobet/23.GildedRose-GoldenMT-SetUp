@@ -42,4 +42,10 @@ public class Quality {
     public boolean isQualityOverZero() {
         return quality > 0;
     }
+
+    public void decreaseQualityByOneWithFloorAtZero() {
+        if(isQualityOverZero()){
+            decreaseQualityByOne();
+        }
+    }
 }

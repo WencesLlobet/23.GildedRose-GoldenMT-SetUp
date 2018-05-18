@@ -8,10 +8,10 @@ public class AgedBrieItem extends Item {
     @Override
     public void updateQuality() {
         if (qualityReal.isNotOustanding()) {
-            increaseQualityByOne();
+            qualityReal.incraseByOne();
         }
         if (isSellinUnderZero() && qualityReal.isNotOustanding()) {
-            increaseQualityByOne();
+            qualityReal.incraseByOne();
         }
     }
 

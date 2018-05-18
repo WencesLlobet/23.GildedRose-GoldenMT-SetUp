@@ -6,14 +6,12 @@ public abstract class Item {
 
     protected String name;
     protected Sellin sellInReal;
-    protected int quality;
     protected Quality qualityReal;
 
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellInReal = Sellin.createSellin(sellIn);
-        this.quality = quality;
         this.qualityReal = new Quality(quality);
     }
 
@@ -26,20 +24,11 @@ public abstract class Item {
 
 
     protected void decreaseQualityByOneWithFloor(){
-        if(qualityReal.isQualityOverZero()){
-            decreaseQualityByOne();
-        }
-    }
-
-    protected void increaseQualityByOne()
-    {
-        qualityReal.incraseByOne();
-        quality = quality + 1;
+        qualityReal.decreaseQualityByOneWithFloorAtZero();
     }
 
 
     protected void incrementQualityBy(Integer increase) {
-        quality = getQuality() + increase;
         qualityReal.incrementQualityBy(increase);
     }
 
