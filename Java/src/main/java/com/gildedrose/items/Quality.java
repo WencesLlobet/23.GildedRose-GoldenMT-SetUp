@@ -27,11 +27,19 @@ public class Quality {
         return quality;
     }
 
-    public boolean isNotOustandingQuality() {
+    public boolean isNotOustanding() {
         return quality < OUTSTANDING_QUALITY;
     }
 
-    public boolean isOustandingQuality() {
-        return !isNotOustandingQuality();
+    public boolean isOustanding() {
+        return !isNotOustanding();
+    }
+
+    public void incrementQualityBy(Integer increase) {
+        quality += increase;
+    }
+
+    public boolean isQualityOverZero() {
+        return quality > 0;
     }
 }

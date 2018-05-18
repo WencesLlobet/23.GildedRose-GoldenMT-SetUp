@@ -18,12 +18,11 @@ public class TicketsItem extends Item {
 
     @Override
     public void updateQuality() {
-        if( qualityReal.isOustandingQuality()){
+        if( qualityReal.isOustanding()){
             return;
         }
         incrementForGiven.put(Sellin.UNDER_ZERO,- getQuality());
-
-         incrementQualityBy(incrementForGiven.get(sellInReal.getType()));
+        incrementQualityBy(incrementForGiven.get(sellInReal.getType()));
     }
 
     @Override

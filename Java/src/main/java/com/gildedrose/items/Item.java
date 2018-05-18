@@ -7,7 +7,7 @@ public abstract class Item {
     protected String name;
     protected Sellin sellInReal;
     protected int quality;
-    protected  Quality qualityReal;
+    protected Quality qualityReal;
 
 
     public Item(String name, int sellIn, int quality) {
@@ -26,7 +26,7 @@ public abstract class Item {
 
 
     protected void decreaseQualityByOneWithFloor(){
-        if(quality > 0){
+        if(qualityReal.isQualityOverZero()){
             decreaseQualityByOne();
         }
     }
@@ -40,14 +40,26 @@ public abstract class Item {
 
     protected void incrementQualityBy(Integer increase) {
         quality = getQuality() + increase;
+        qualityReal.incrementQualityBy(increase);
     }
 
-    public abstract void updateSellin();
+    public int getQuality() {
+        return qualityReal.getQuality();
+    }
 
     protected void decreaseQualityByOne() {
         qualityReal.decreaseQualityByOne();
-        quality--;
     }
+
+
+
+
+
+
+
+
+
+    public abstract void updateSellin();
 
     protected boolean isSellinUnderZero() {
         return sellInReal.isSellInunderZero();
@@ -57,13 +69,8 @@ public abstract class Item {
         sellInReal.decreaseByOne();
     }
 
-
     public String getName() {
         return name;
-    }
-
-    public int getQuality() {
-        return quality;
     }
 
     public int getSellIn() {
