@@ -6,12 +6,14 @@ public abstract class Item {
     public String name;
 
     public int sellIn;
+    public Sellin sellInReal;
 
     public int quality;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
+        this.sellInReal = Sellin.createSellin(sellIn);
         this.quality = quality;
     }
 

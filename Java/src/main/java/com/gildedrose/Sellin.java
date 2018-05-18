@@ -1,11 +1,11 @@
 package com.gildedrose;
 
+import com.gildedrose.items.UnderZeroSellin;
 import com.gildedrose.sellin.HighSellin;
 import com.gildedrose.sellin.LowSellin;
 import com.gildedrose.sellin.ModerateSellin;
 
 public abstract class Sellin {
-    String id;
     int sellIn;
 
     public static final int MAXIMUM_FOR_MODERATE_SELLIN = 11;
@@ -16,7 +16,7 @@ public abstract class Sellin {
     public static final String HIGH = "HIGH";
 
     protected Sellin(int sellin){
-        this.sellIn = sellin;
+        sellIn = sellin;
     }
 
     public static Sellin createSellin(int sellin) {
