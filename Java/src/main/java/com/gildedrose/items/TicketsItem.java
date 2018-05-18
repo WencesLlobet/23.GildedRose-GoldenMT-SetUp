@@ -22,7 +22,7 @@ public class TicketsItem extends Item {
             return;
         }
         incrementForGiven.put(Sellin.UNDER_ZERO,- getQuality());
-        incrementQualityBy(incrementForGiven.get(sellInReal.getType()));
+        qualityReal.incrementQualityBy( incrementForGiven.get(sellInReal.getType()) );
     }
 
     @Override

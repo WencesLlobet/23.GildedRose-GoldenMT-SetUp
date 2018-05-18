@@ -22,16 +22,9 @@ public abstract class Item {
 
     public abstract void updateQuality();
 
-    protected void incrementQualityBy(Integer increase) {
-        qualityReal.incrementQualityBy(increase);
-    }
 
     public int getQuality() {
         return qualityReal.getQuality();
-    }
-
-    protected void decreaseQualityByOne() {
-        qualityReal.decreaseQualityByOne();
     }
 
 
