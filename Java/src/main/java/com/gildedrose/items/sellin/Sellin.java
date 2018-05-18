@@ -1,4 +1,4 @@
-package com.gildedrose.sellin;
+package com.gildedrose.items.sellin;
 
 public abstract class Sellin {
     int sellIn;

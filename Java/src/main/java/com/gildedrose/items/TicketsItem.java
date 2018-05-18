@@ -1,6 +1,6 @@
 package com.gildedrose.items;
 
-import com.gildedrose.sellin.Sellin;
+import com.gildedrose.items.sellin.Sellin;
 
 import java.util.Hashtable;
 
@@ -21,9 +21,9 @@ public class TicketsItem extends Item {
         if(hasOutstandingQuality()){
             return;
         }
-        incrementForGiven.put(Sellin.UNDER_ZERO,-quality);
+        incrementForGiven.put(Sellin.UNDER_ZERO,- getQuality());
 
-        quality = quality +  incrementForGiven.get(sellInReal.getType());
+         incrementQualityBy(incrementForGiven.get(sellInReal.getType()));
     }
 
     @Override

@@ -1,19 +1,20 @@
 package com.gildedrose.items;
 
-import com.gildedrose.sellin.Sellin;
+import com.gildedrose.items.sellin.Sellin;
 
 public abstract class Item {
 
-    protected static final int OUTSTANDING_QUALITY = 50;
     protected String name;
     protected Sellin sellInReal;
     protected int quality;
+    protected  Quality qualityReal;
 
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellInReal = Sellin.createSellin(sellIn);
         this.quality = quality;
+        this.qualityReal = new Quality(quality);
     }
 
    @Override
@@ -28,7 +29,7 @@ public abstract class Item {
     }
 
     protected boolean hasNotOutstandingQuality() {
-        return quality < OUTSTANDING_QUALITY;
+        return qualityReal.isNotOustandingQuality();
     }
 
     protected void decreaseQualityByOneWithFloor(){
@@ -37,9 +38,21 @@ public abstract class Item {
         }
     }
 
+    protected void increaseQualityByOne()
+    {
+        qualityReal.incraseByOne();
+        quality = quality + 1;
+    }
+
+
+    protected void incrementQualityBy(Integer increase) {
+        quality = getQuality() + increase;
+    }
+
     public abstract void updateSellin();
 
     protected void decreaseQualityByOne() {
+        qualityReal.decreaseQualityByOne();
         quality--;
     }
 

@@ -1,4 +1,4 @@
-package com.gildedrose.sellin;
+package com.gildedrose.items.sellin;
 
 public class ModerateSellin extends Sellin {
 
