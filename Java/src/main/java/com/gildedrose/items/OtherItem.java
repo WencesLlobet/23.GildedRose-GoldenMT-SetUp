@@ -7,9 +7,9 @@ public class OtherItem extends Item{
 
     @Override
     public void updateQuality() {
-        decreaseQualityByOneWithFloor();
+        qualityReal.decreaseQualityByOneWithFloor();
         if (isSellinUnderZero()) {
-            decreaseQualityByOneWithFloor();
+            qualityReal.decreaseQualityByOneWithFloor();
         }
     }
 

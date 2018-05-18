@@ -22,12 +22,6 @@ public abstract class Item {
 
     public abstract void updateQuality();
 
-
-    protected void decreaseQualityByOneWithFloor(){
-        qualityReal.decreaseQualityByOneWithFloorAtZero();
-    }
-
-
     protected void incrementQualityBy(Integer increase) {
         qualityReal.incrementQualityBy(increase);
     }
