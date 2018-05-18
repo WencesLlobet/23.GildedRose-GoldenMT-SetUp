@@ -23,13 +23,6 @@ class GildedRose {
         currentItem.updateSellin();
         currentItem.updateQuality();
 
-            if(currentItem instanceof  AgedBrieItem) {
-                if (currentItem.sellIn < 0) {
-                    if (currentItem.quality < 50) {
-                        currentItem.quality = currentItem.quality + 1;
-                    }
-                }
-            }
     }
 
     public String itemsToString() {
