@@ -18,7 +18,7 @@ public class TicketsItem extends Item {
 
     @Override
     public void updateQuality() {
-        if(hasOutstandingQuality()){
+        if( qualityReal.isOustandingQuality()){
             return;
         }
         incrementForGiven.put(Sellin.UNDER_ZERO,- getQuality());

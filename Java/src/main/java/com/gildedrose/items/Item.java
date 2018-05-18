@@ -24,13 +24,6 @@ public abstract class Item {
 
     public abstract void updateQuality();
 
-    protected boolean hasOutstandingQuality() {
-        return !hasNotOutstandingQuality();
-    }
-
-    protected boolean hasNotOutstandingQuality() {
-        return qualityReal.isNotOustandingQuality();
-    }
 
     protected void decreaseQualityByOneWithFloor(){
         if(quality > 0){

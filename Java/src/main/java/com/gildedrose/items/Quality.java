@@ -30,4 +30,8 @@ public class Quality {
     public boolean isNotOustandingQuality() {
         return quality < OUTSTANDING_QUALITY;
     }
+
+    public boolean isOustandingQuality() {
+        return !isNotOustandingQuality();
+    }
 }
